@@ -3,6 +3,8 @@ import { Card, CardImg, CardText, CardBody, Breadcrumb, BreadcrumbItem } from 'r
 import { Link } from 'react-router-dom';
 
   
+
+//This maps through the comments array and says what information needs to be pulled and used from the array
   function RenderComments({comments}) {
     if (comments) {
       return (
@@ -24,6 +26,7 @@ import { Link } from 'react-router-dom';
     }
   }
   
+  //This is saying how each individual card needs to be organized
   function RenderCampsite({campsite}) {
       return (
         <div className="col-md-5 m-1">
@@ -37,6 +40,8 @@ import { Link } from 'react-router-dom';
       )
     }
 
+//This says how each card needs to be organized in the container/row along with breadcrumbs. 
+//The last div says take the two above functions and pass the properties from the comments and campsites array and render them as defined in the above functions
   function CampsiteInfo(props) {
     if (props.campsite) {
       return (

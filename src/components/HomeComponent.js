@@ -1,6 +1,8 @@
 import React from 'react' 
 import { Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
 
+
+//Making the Card itself. The info needed in the card will de defined and come from the below function.
 function RenderCard({item}) {
     return(
         <Card>
@@ -13,6 +15,8 @@ function RenderCard({item}) {
     )
 }
 
+//This function is How the RenderCard needs to be organized. Also passing through the properties of the campsite array with the 
+//featured boolean as true
 function Home(props) {
     return (
         <div className="container">

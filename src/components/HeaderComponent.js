@@ -3,10 +3,12 @@ import { Navbar, NavbarBrand, NavbarToggler, Collapse, NavItem, Jumbotron } from
 import { NavLink } from 'react-router-dom';
 import Nav from 'reactstrap/lib/Nav';
 
+
 class Header extends Component {
     constructor(props) {
         super(props);
 
+//This is to point to the class and not to the website
         this.toggleNav = this.toggleNav.bind(this)
         this.state = {
             isNavOpen: false
