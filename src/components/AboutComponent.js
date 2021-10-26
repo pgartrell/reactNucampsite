@@ -9,6 +9,7 @@ import {
 } from "reactstrap";
 import { Link } from "react-router-dom";
 
+//This says, I need to collect all the below data in this format
 function RenderPartner({ partner }) {
   if (partner) {
     return (
@@ -24,6 +25,7 @@ function RenderPartner({ partner }) {
   return <div />;
 }
 
+//This says take the properties of the above data and format I collected above and render it to the screen
 function About(props) {
   const partners = props.partners.map((partner) => {
     return (
@@ -33,6 +35,7 @@ function About(props) {
     );
   });
 
+  //We don't pass props here because we defined the information we want to say in the return itself
   return (
     <div className="container">
       <div className="row">
