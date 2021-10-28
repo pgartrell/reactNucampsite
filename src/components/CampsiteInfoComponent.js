@@ -18,9 +18,6 @@ import {Loading} from './LoadingComponent'
 import { baseUrl } from '../shared/baseUrl';
 import {FadeTransform, Fade, Stagger} from 'react-animation-components'
 
-function required(val) {
-  return val && val.length;
-}
 
 const maxLength = (len) => (val) => !val || val.length <= len;
 const minLength = (len) => (val) => val && val.length >= len;
@@ -52,6 +49,7 @@ function RenderComments({ comments, postComment, campsiteId }) {
       </div>
     );
   }
+  return <div />
 }
 
 //This is saying how each individual card needs to be organized
@@ -78,10 +76,6 @@ class CommentForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      author: "",
-    };
-
-    this.state = {
       isModalOpen: false,
     };
     this.toggleModal = this.toggleModal.bind(this);
@@ -105,8 +99,6 @@ class CommentForm extends Component {
         <Button
           outline
           onClick={this.toggleModal}
-          type="submit"
-          color="primary"
         >
           <i className="fa fa-pencil fa-lg" />
           Submit Comment
@@ -120,6 +112,7 @@ class CommentForm extends Component {
                 <Control.select
                   model=".rating"
                   name="rating"
+                  id= "rating"
                   className="form-control"
                 >
                   <option>1</option>
@@ -139,7 +132,6 @@ class CommentForm extends Component {
                   placeholder="Your Name"
                   className="form-control"
                   validators={{
-                    required,
                     minLength: minLength(2),
                     maxLength: maxLength(15),
                   }}
@@ -150,7 +142,6 @@ class CommentForm extends Component {
                   show="touched"
                   component="div"
                   messages={{
-                    required: "Required",
                     minLength: "Must be at least 2 characters",
                     maxLength: "Must be 15 characters or less",
                   }}
@@ -163,7 +154,6 @@ class CommentForm extends Component {
                   model=".text"
                   id="text"
                   name="text"
-                  placeholder="Text"
                   rows="6"
                   className="form-control"
                 />

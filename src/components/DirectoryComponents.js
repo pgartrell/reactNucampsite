@@ -9,6 +9,7 @@ import {baseUrl} from '../shared/baseUrl';
 function RenderDirectoryItem({campsite}) {
     return (
         <Card >
+            {/* This brings up every individual object from the directory array */}
             <Link to={`/directory/${campsite.id}`}>
             <CardImg width="100%" src={baseUrl + campsite.image} alt={campsite.name} />
             <CardImgOverlay>
